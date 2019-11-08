@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _10_Meter_Walk
 {
-    public partial class Form1 : Form
+    public partial class primaryForm : Form
     {
-        public Form1()
+        public primaryForm()
         {
             InitializeComponent();
         }
