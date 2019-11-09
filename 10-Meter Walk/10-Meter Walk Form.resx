@@ -117,23 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="write" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\write.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="feet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\feet.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="power" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\power.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="viewTestButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        SUVORK5CYII=
+</value>
   </data>
 </root>
