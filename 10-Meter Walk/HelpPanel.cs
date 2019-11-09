@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace _10_Meter_Walk
 {
-    public partial class New_Test_Panel : UserControl
+    public partial class HelpPanel : UserControl
     {
-        
-
-        public New_Test_Panel()
+        public HelpPanel()
         {
             InitializeComponent();
-        }
-
-        private void New_Test_Panel_Paint(object sender, PaintEventArgs e)
-        {
-            StyleManager.addCircularBorder(saveButton, e);
         }
     }
 }

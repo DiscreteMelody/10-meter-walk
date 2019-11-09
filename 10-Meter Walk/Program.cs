@@ -16,7 +16,9 @@ namespace _10_Meter_Walk
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new primaryForm());
+            PrimaryForm form = new PrimaryForm();
+            UIController controller = new UIController(form);
+            Application.Run(form);
         }
     }
 }

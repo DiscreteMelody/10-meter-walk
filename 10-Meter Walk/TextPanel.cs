@@ -45,6 +45,16 @@ namespace _10_Meter_Walk
             get { return this.togglesBorder; }
             set { this.togglesBorder = value; }
         }
+        public string Text
+        {
+            get { return this.textBox.Text; }
+            set
+            {
+                this.onTextBoxClicked();
+                this.textBox.Text = value;
+                this.onTextBoxLeave();
+            }
+        }
 
         public TextPanel()
         {
@@ -106,6 +116,16 @@ namespace _10_Meter_Walk
         {
             onTextBoxClicked();
             onTextBoxLeave();
+        }
+
+        /// <summary>
+        /// empties the text of the text panel and resets the watermark and border as if it became inactive
+        /// </summary>
+        public void clearText()
+        {
+            this.textBox.Text = "";
+            this.onTextBoxClicked();
+            this.onTextBoxLeave();
         }
     }
 }

@@ -58,11 +58,17 @@
     <Compile Include="CircularButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="New Test Panel.cs">
+    <Compile Include="HelpPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="New Test Panel.Designer.cs">
-      <DependentUpon>New Test Panel.cs</DependentUpon>
+    <Compile Include="HelpPanel.Designer.cs">
+      <DependentUpon>HelpPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewTestPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewTestPanel.Designer.cs">
+      <DependentUpon>NewTestPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,11 +79,21 @@
     <Compile Include="TextPanel.Designer.cs">
       <DependentUpon>TextPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIController.cs" />
+    <Compile Include="ViewTestPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewTestPanel.Designer.cs">
+      <DependentUpon>ViewTestPanel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="10-Meter Walk Form.resx">
       <DependentUpon>10-Meter Walk Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New Test Panel.resx">
-      <DependentUpon>New Test Panel.cs</DependentUpon>
+    <EmbeddedResource Include="HelpPanel.resx">
+      <DependentUpon>HelpPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewTestPanel.resx">
+      <DependentUpon>NewTestPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="TextPanel.resx">
       <DependentUpon>TextPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTestPanel.resx">
+      <DependentUpon>ViewTestPanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

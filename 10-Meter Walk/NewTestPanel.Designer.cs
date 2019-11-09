@@ -1,6 +1,6 @@
 ﻿namespace _10_Meter_Walk
 {
-    partial class New_Test_Panel
+    partial class NewTestPanel
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,19 +30,19 @@
         {
             this.todayButton = new System.Windows.Forms.Button();
             this.testInformationPanel = new System.Windows.Forms.Panel();
-            this.patientInformationPanel = new System.Windows.Forms.Panel();
-            this.patientInformationLabel = new System.Windows.Forms.Label();
-            this.testInformationLabel = new System.Windows.Forms.Label();
-            this.notesTextbox = new System.Windows.Forms.TextBox();
             this.notesLabel = new System.Windows.Forms.Label();
-            this.saveLabel = new System.Windows.Forms.Label();
-            this.dateOfBirthTextbox = new _10_Meter_Walk.TextPanel();
-            this.patientLastTextbox = new _10_Meter_Walk.TextPanel();
-            this.patientFirstTextbox = new _10_Meter_Walk.TextPanel();
+            this.notesTextbox = new System.Windows.Forms.TextBox();
             this.adminLastTextbox = new _10_Meter_Walk.TextPanel();
             this.adminFirstTextbox = new _10_Meter_Walk.TextPanel();
-            this.timeTextbox = new _10_Meter_Walk.TextPanel();
-            this.dateTextbox = new _10_Meter_Walk.TextPanel();
+            this.testTimeTextbox = new _10_Meter_Walk.TextPanel();
+            this.testDateTextbox = new _10_Meter_Walk.TextPanel();
+            this.testInformationLabel = new System.Windows.Forms.Label();
+            this.patientInformationPanel = new System.Windows.Forms.Panel();
+            this.patientDOBTextbox = new _10_Meter_Walk.TextPanel();
+            this.patientLastTextbox = new _10_Meter_Walk.TextPanel();
+            this.patientFirstTextbox = new _10_Meter_Walk.TextPanel();
+            this.patientInformationLabel = new System.Windows.Forms.Label();
+            this.saveLabel = new System.Windows.Forms.Label();
             this.saveButton = new _10_Meter_Walk.CircularButton();
             this.testInformationPanel.SuspendLayout();
             this.patientInformationPanel.SuspendLayout();
@@ -74,59 +74,14 @@
             this.testInformationPanel.Controls.Add(this.notesTextbox);
             this.testInformationPanel.Controls.Add(this.adminLastTextbox);
             this.testInformationPanel.Controls.Add(this.adminFirstTextbox);
-            this.testInformationPanel.Controls.Add(this.timeTextbox);
-            this.testInformationPanel.Controls.Add(this.dateTextbox);
+            this.testInformationPanel.Controls.Add(this.testTimeTextbox);
+            this.testInformationPanel.Controls.Add(this.testDateTextbox);
             this.testInformationPanel.Controls.Add(this.testInformationLabel);
             this.testInformationPanel.Controls.Add(this.todayButton);
             this.testInformationPanel.Location = new System.Drawing.Point(3, 3);
             this.testInformationPanel.Name = "testInformationPanel";
             this.testInformationPanel.Size = new System.Drawing.Size(355, 480);
             this.testInformationPanel.TabIndex = 3;
-            // 
-            // patientInformationPanel
-            // 
-            this.patientInformationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.patientInformationPanel.Controls.Add(this.dateOfBirthTextbox);
-            this.patientInformationPanel.Controls.Add(this.patientLastTextbox);
-            this.patientInformationPanel.Controls.Add(this.patientFirstTextbox);
-            this.patientInformationPanel.Controls.Add(this.patientInformationLabel);
-            this.patientInformationPanel.Location = new System.Drawing.Point(364, 3);
-            this.patientInformationPanel.Name = "patientInformationPanel";
-            this.patientInformationPanel.Size = new System.Drawing.Size(267, 320);
-            this.patientInformationPanel.TabIndex = 4;
-            // 
-            // patientInformationLabel
-            // 
-            this.patientInformationLabel.AutoSize = true;
-            this.patientInformationLabel.BackColor = System.Drawing.Color.Transparent;
-            this.patientInformationLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientInformationLabel.Location = new System.Drawing.Point(4, 10);
-            this.patientInformationLabel.Name = "patientInformationLabel";
-            this.patientInformationLabel.Size = new System.Drawing.Size(259, 32);
-            this.patientInformationLabel.TabIndex = 0;
-            this.patientInformationLabel.Text = "Patient Information";
-            // 
-            // testInformationLabel
-            // 
-            this.testInformationLabel.AutoSize = true;
-            this.testInformationLabel.BackColor = System.Drawing.Color.Transparent;
-            this.testInformationLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testInformationLabel.Location = new System.Drawing.Point(68, 10);
-            this.testInformationLabel.Name = "testInformationLabel";
-            this.testInformationLabel.Size = new System.Drawing.Size(219, 32);
-            this.testInformationLabel.TabIndex = 8;
-            this.testInformationLabel.Text = "Test Information";
-            // 
-            // notesTextbox
-            // 
-            this.notesTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.notesTextbox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notesTextbox.Location = new System.Drawing.Point(9, 343);
-            this.notesTextbox.Multiline = true;
-            this.notesTextbox.Name = "notesTextbox";
-            this.notesTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.notesTextbox.Size = new System.Drawing.Size(336, 118);
-            this.notesTextbox.TabIndex = 13;
             // 
             // notesLabel
             // 
@@ -139,52 +94,16 @@
             this.notesLabel.TabIndex = 14;
             this.notesLabel.Text = "Notes";
             // 
-            // saveLabel
+            // notesTextbox
             // 
-            this.saveLabel.AutoSize = true;
-            this.saveLabel.BackColor = System.Drawing.Color.Transparent;
-            this.saveLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveLabel.Location = new System.Drawing.Point(474, 450);
-            this.saveLabel.Name = "saveLabel";
-            this.saveLabel.Size = new System.Drawing.Size(62, 25);
-            this.saveLabel.TabIndex = 9;
-            this.saveLabel.Text = "Save";
-            // 
-            // dateOfBirthTextbox
-            // 
-            this.dateOfBirthTextbox.BackColor = System.Drawing.Color.Transparent;
-            this.dateOfBirthTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.dateOfBirthTextbox.Location = new System.Drawing.Point(48, 165);
-            this.dateOfBirthTextbox.Name = "dateOfBirthTextbox";
-            this.dateOfBirthTextbox.Size = new System.Drawing.Size(186, 39);
-            this.dateOfBirthTextbox.TabIndex = 3;
-            this.dateOfBirthTextbox.TogglesBorder = true;
-            this.dateOfBirthTextbox.WatermarkColor = System.Drawing.Color.Gray;
-            this.dateOfBirthTextbox.WatermarkText = "DoB (mm/dd/yyyy)";
-            // 
-            // patientLastTextbox
-            // 
-            this.patientLastTextbox.BackColor = System.Drawing.Color.Transparent;
-            this.patientLastTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.patientLastTextbox.Location = new System.Drawing.Point(48, 120);
-            this.patientLastTextbox.Name = "patientLastTextbox";
-            this.patientLastTextbox.Size = new System.Drawing.Size(186, 39);
-            this.patientLastTextbox.TabIndex = 2;
-            this.patientLastTextbox.TogglesBorder = true;
-            this.patientLastTextbox.WatermarkColor = System.Drawing.Color.Gray;
-            this.patientLastTextbox.WatermarkText = "Last Name";
-            // 
-            // patientFirstTextbox
-            // 
-            this.patientFirstTextbox.BackColor = System.Drawing.Color.Transparent;
-            this.patientFirstTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.patientFirstTextbox.Location = new System.Drawing.Point(48, 75);
-            this.patientFirstTextbox.Name = "patientFirstTextbox";
-            this.patientFirstTextbox.Size = new System.Drawing.Size(186, 39);
-            this.patientFirstTextbox.TabIndex = 1;
-            this.patientFirstTextbox.TogglesBorder = true;
-            this.patientFirstTextbox.WatermarkColor = System.Drawing.Color.Gray;
-            this.patientFirstTextbox.WatermarkText = "First Name";
+            this.notesTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.notesTextbox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesTextbox.Location = new System.Drawing.Point(9, 343);
+            this.notesTextbox.Multiline = true;
+            this.notesTextbox.Name = "notesTextbox";
+            this.notesTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.notesTextbox.Size = new System.Drawing.Size(336, 118);
+            this.notesTextbox.TabIndex = 13;
             // 
             // adminLastTextbox
             // 
@@ -210,29 +129,110 @@
             this.adminFirstTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.adminFirstTextbox.WatermarkText = "Test Admin First";
             // 
-            // timeTextbox
+            // testTimeTextbox
             // 
-            this.timeTextbox.BackColor = System.Drawing.Color.Transparent;
-            this.timeTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.timeTextbox.Location = new System.Drawing.Point(9, 120);
-            this.timeTextbox.Name = "timeTextbox";
-            this.timeTextbox.Size = new System.Drawing.Size(186, 39);
-            this.timeTextbox.TabIndex = 10;
-            this.timeTextbox.TogglesBorder = true;
-            this.timeTextbox.WatermarkColor = System.Drawing.Color.Gray;
-            this.timeTextbox.WatermarkText = "Time (hh:mm am/pm)";
+            this.testTimeTextbox.BackColor = System.Drawing.Color.Transparent;
+            this.testTimeTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.testTimeTextbox.Location = new System.Drawing.Point(9, 120);
+            this.testTimeTextbox.Name = "testTimeTextbox";
+            this.testTimeTextbox.Size = new System.Drawing.Size(186, 39);
+            this.testTimeTextbox.TabIndex = 10;
+            this.testTimeTextbox.TogglesBorder = true;
+            this.testTimeTextbox.WatermarkColor = System.Drawing.Color.Gray;
+            this.testTimeTextbox.WatermarkText = "Time (hh:mm am/pm)";
             // 
-            // dateTextbox
+            // testDateTextbox
             // 
-            this.dateTextbox.BackColor = System.Drawing.Color.Transparent;
-            this.dateTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.dateTextbox.Location = new System.Drawing.Point(9, 75);
-            this.dateTextbox.Name = "dateTextbox";
-            this.dateTextbox.Size = new System.Drawing.Size(186, 39);
-            this.dateTextbox.TabIndex = 9;
-            this.dateTextbox.TogglesBorder = true;
-            this.dateTextbox.WatermarkColor = System.Drawing.Color.Gray;
-            this.dateTextbox.WatermarkText = "Date (mm/dd/yyyy)";
+            this.testDateTextbox.BackColor = System.Drawing.Color.Transparent;
+            this.testDateTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.testDateTextbox.Location = new System.Drawing.Point(9, 75);
+            this.testDateTextbox.Name = "testDateTextbox";
+            this.testDateTextbox.Size = new System.Drawing.Size(186, 39);
+            this.testDateTextbox.TabIndex = 9;
+            this.testDateTextbox.TogglesBorder = true;
+            this.testDateTextbox.WatermarkColor = System.Drawing.Color.Gray;
+            this.testDateTextbox.WatermarkText = "Date (mm/dd/yyyy)";
+            // 
+            // testInformationLabel
+            // 
+            this.testInformationLabel.AutoSize = true;
+            this.testInformationLabel.BackColor = System.Drawing.Color.Transparent;
+            this.testInformationLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testInformationLabel.Location = new System.Drawing.Point(68, 10);
+            this.testInformationLabel.Name = "testInformationLabel";
+            this.testInformationLabel.Size = new System.Drawing.Size(219, 32);
+            this.testInformationLabel.TabIndex = 8;
+            this.testInformationLabel.Text = "Test Information";
+            // 
+            // patientInformationPanel
+            // 
+            this.patientInformationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.patientInformationPanel.Controls.Add(this.patientDOBTextbox);
+            this.patientInformationPanel.Controls.Add(this.patientLastTextbox);
+            this.patientInformationPanel.Controls.Add(this.patientFirstTextbox);
+            this.patientInformationPanel.Controls.Add(this.patientInformationLabel);
+            this.patientInformationPanel.Location = new System.Drawing.Point(364, 3);
+            this.patientInformationPanel.Name = "patientInformationPanel";
+            this.patientInformationPanel.Size = new System.Drawing.Size(267, 320);
+            this.patientInformationPanel.TabIndex = 4;
+            // 
+            // patientDOBTextbox
+            // 
+            this.patientDOBTextbox.BackColor = System.Drawing.Color.Transparent;
+            this.patientDOBTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.patientDOBTextbox.Location = new System.Drawing.Point(48, 165);
+            this.patientDOBTextbox.Name = "patientDOBTextbox";
+            this.patientDOBTextbox.Size = new System.Drawing.Size(186, 39);
+            this.patientDOBTextbox.TabIndex = 3;
+            this.patientDOBTextbox.TogglesBorder = true;
+            this.patientDOBTextbox.WatermarkColor = System.Drawing.Color.Gray;
+            this.patientDOBTextbox.WatermarkText = "DoB (mm/dd/yyyy)";
+            // 
+            // patientLastTextbox
+            // 
+            this.patientLastTextbox.BackColor = System.Drawing.Color.Transparent;
+            this.patientLastTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.patientLastTextbox.Location = new System.Drawing.Point(48, 120);
+            this.patientLastTextbox.Name = "patientLastTextbox";
+            this.patientLastTextbox.Size = new System.Drawing.Size(186, 39);
+            this.patientLastTextbox.TabIndex = 2;
+            this.patientLastTextbox.TogglesBorder = true;
+            this.patientLastTextbox.WatermarkColor = System.Drawing.Color.Gray;
+            this.patientLastTextbox.WatermarkText = "Last Name";
+            // 
+            // patientFirstTextbox
+            // 
+            this.patientFirstTextbox.BackColor = System.Drawing.Color.Transparent;
+            this.patientFirstTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.patientFirstTextbox.Location = new System.Drawing.Point(48, 75);
+            this.patientFirstTextbox.Name = "patientFirstTextbox";
+            this.patientFirstTextbox.Size = new System.Drawing.Size(186, 39);
+            this.patientFirstTextbox.TabIndex = 1;
+            this.patientFirstTextbox.TogglesBorder = true;
+            this.patientFirstTextbox.WatermarkColor = System.Drawing.Color.Gray;
+            this.patientFirstTextbox.WatermarkText = "First Name";
+            // 
+            // patientInformationLabel
+            // 
+            this.patientInformationLabel.AutoSize = true;
+            this.patientInformationLabel.BackColor = System.Drawing.Color.Transparent;
+            this.patientInformationLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientInformationLabel.Location = new System.Drawing.Point(4, 10);
+            this.patientInformationLabel.Name = "patientInformationLabel";
+            this.patientInformationLabel.Size = new System.Drawing.Size(259, 32);
+            this.patientInformationLabel.TabIndex = 0;
+            this.patientInformationLabel.Text = "Patient Information";
+            // 
+            // saveLabel
+            // 
+            this.saveLabel.AutoSize = true;
+            this.saveLabel.BackColor = System.Drawing.Color.Transparent;
+            this.saveLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveLabel.Location = new System.Drawing.Point(474, 450);
+            this.saveLabel.Name = "saveLabel";
+            this.saveLabel.Size = new System.Drawing.Size(62, 25);
+            this.saveLabel.TabIndex = 9;
+            this.saveLabel.Text = "Save";
             // 
             // saveButton
             // 
@@ -252,7 +252,7 @@
             this.saveButton.TabIndex = 2;
             this.saveButton.UseVisualStyleBackColor = false;
             // 
-            // New_Test_Panel
+            // NewTestPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -261,7 +261,7 @@
             this.Controls.Add(this.patientInformationPanel);
             this.Controls.Add(this.testInformationPanel);
             this.Controls.Add(this.saveButton);
-            this.Name = "New_Test_Panel";
+            this.Name = "NewTestPanel";
             this.Size = new System.Drawing.Size(634, 486);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.New_Test_Panel_Paint);
             this.testInformationPanel.ResumeLayout(false);
@@ -281,10 +281,10 @@
         private System.Windows.Forms.Label patientInformationLabel;
         private TextPanel patientFirstTextbox;
         private TextPanel patientLastTextbox;
-        private TextPanel dateOfBirthTextbox;
+        private TextPanel patientDOBTextbox;
         private System.Windows.Forms.Label testInformationLabel;
-        private TextPanel timeTextbox;
-        private TextPanel dateTextbox;
+        private TextPanel testTimeTextbox;
+        private TextPanel testDateTextbox;
         private System.Windows.Forms.TextBox notesTextbox;
         private TextPanel adminLastTextbox;
         private TextPanel adminFirstTextbox;
