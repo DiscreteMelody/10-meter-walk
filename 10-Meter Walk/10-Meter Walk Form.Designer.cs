@@ -37,7 +37,7 @@
             this.newTestButton = new System.Windows.Forms.Button();
             this.headerPanel = new System.Windows.Forms.Panel();
             this.headerLabel = new System.Windows.Forms.Label();
-            this.new_Test_Panel1 = new _10_Meter_Walk.New_Test_Panel();
+            this.newTestPanel = new _10_Meter_Walk.New_Test_Panel();
             this.leftPanel.SuspendLayout();
             this.headerPanel.SuspendLayout();
             this.SuspendLayout();
@@ -164,20 +164,20 @@
             this.headerLabel.TabIndex = 0;
             this.headerLabel.Text = "10-Meter Walk Test";
             // 
-            // new_Test_Panel1
+            // newTestPanel
             // 
-            this.new_Test_Panel1.BackColor = System.Drawing.Color.White;
-            this.new_Test_Panel1.Location = new System.Drawing.Point(150, 75);
-            this.new_Test_Panel1.Name = "new_Test_Panel1";
-            this.new_Test_Panel1.Size = new System.Drawing.Size(634, 486);
-            this.new_Test_Panel1.TabIndex = 2;
+            this.newTestPanel.BackColor = System.Drawing.Color.White;
+            this.newTestPanel.Location = new System.Drawing.Point(150, 75);
+            this.newTestPanel.Name = "newTestPanel";
+            this.newTestPanel.Size = new System.Drawing.Size(634, 486);
+            this.newTestPanel.TabIndex = 2;
             // 
             // primaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.new_Test_Panel1);
+            this.Controls.Add(this.newTestPanel);
             this.Controls.Add(this.headerPanel);
             this.Controls.Add(this.leftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -201,7 +201,7 @@
         private System.Windows.Forms.Button viewTestButton;
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Button exitButton;
-        private New_Test_Panel new_Test_Panel1;
+        private New_Test_Panel newTestPanel;
     }
 }
 

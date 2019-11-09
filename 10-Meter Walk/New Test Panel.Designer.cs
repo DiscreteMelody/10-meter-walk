@@ -33,15 +33,15 @@
             this.patientInformationPanel = new System.Windows.Forms.Panel();
             this.patientInformationLabel = new System.Windows.Forms.Label();
             this.testInformationLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.notesTextbox = new System.Windows.Forms.TextBox();
+            this.notesLabel = new System.Windows.Forms.Label();
+            this.saveLabel = new System.Windows.Forms.Label();
             this.dateOfBirthTextbox = new _10_Meter_Walk.TextPanel();
             this.patientLastTextbox = new _10_Meter_Walk.TextPanel();
             this.patientFirstTextbox = new _10_Meter_Walk.TextPanel();
-            this.textPanel3 = new _10_Meter_Walk.TextPanel();
-            this.textPanel2 = new _10_Meter_Walk.TextPanel();
-            this.textPanel1 = new _10_Meter_Walk.TextPanel();
+            this.adminLastTextbox = new _10_Meter_Walk.TextPanel();
+            this.adminFirstTextbox = new _10_Meter_Walk.TextPanel();
+            this.timeTextbox = new _10_Meter_Walk.TextPanel();
             this.dateTextbox = new _10_Meter_Walk.TextPanel();
             this.saveButton = new _10_Meter_Walk.CircularButton();
             this.testInformationPanel.SuspendLayout();
@@ -70,11 +70,11 @@
             // testInformationPanel
             // 
             this.testInformationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.testInformationPanel.Controls.Add(this.label1);
-            this.testInformationPanel.Controls.Add(this.textBox1);
-            this.testInformationPanel.Controls.Add(this.textPanel3);
-            this.testInformationPanel.Controls.Add(this.textPanel2);
-            this.testInformationPanel.Controls.Add(this.textPanel1);
+            this.testInformationPanel.Controls.Add(this.notesLabel);
+            this.testInformationPanel.Controls.Add(this.notesTextbox);
+            this.testInformationPanel.Controls.Add(this.adminLastTextbox);
+            this.testInformationPanel.Controls.Add(this.adminFirstTextbox);
+            this.testInformationPanel.Controls.Add(this.timeTextbox);
             this.testInformationPanel.Controls.Add(this.dateTextbox);
             this.testInformationPanel.Controls.Add(this.testInformationLabel);
             this.testInformationPanel.Controls.Add(this.todayButton);
@@ -117,37 +117,38 @@
             this.testInformationLabel.TabIndex = 8;
             this.testInformationLabel.Text = "Test Information";
             // 
-            // textBox1
+            // notesTextbox
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(9, 343);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(336, 118);
-            this.textBox1.TabIndex = 13;
+            this.notesTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.notesTextbox.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesTextbox.Location = new System.Drawing.Point(9, 343);
+            this.notesTextbox.Multiline = true;
+            this.notesTextbox.Name = "notesTextbox";
+            this.notesTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.notesTextbox.Size = new System.Drawing.Size(336, 118);
+            this.notesTextbox.TabIndex = 13;
             // 
-            // label1
+            // notesLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(146, 317);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 23);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Notes";
+            this.notesLabel.AutoSize = true;
+            this.notesLabel.BackColor = System.Drawing.Color.Transparent;
+            this.notesLabel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesLabel.Location = new System.Drawing.Point(146, 317);
+            this.notesLabel.Name = "notesLabel";
+            this.notesLabel.Size = new System.Drawing.Size(62, 23);
+            this.notesLabel.TabIndex = 14;
+            this.notesLabel.Text = "Notes";
             // 
-            // label2
+            // saveLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(474, 450);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 25);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Save";
+            this.saveLabel.AutoSize = true;
+            this.saveLabel.BackColor = System.Drawing.Color.Transparent;
+            this.saveLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveLabel.Location = new System.Drawing.Point(474, 450);
+            this.saveLabel.Name = "saveLabel";
+            this.saveLabel.Size = new System.Drawing.Size(62, 25);
+            this.saveLabel.TabIndex = 9;
+            this.saveLabel.Text = "Save";
             // 
             // dateOfBirthTextbox
             // 
@@ -185,41 +186,41 @@
             this.patientFirstTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.patientFirstTextbox.WatermarkText = "First Name";
             // 
-            // textPanel3
+            // adminLastTextbox
             // 
-            this.textPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.textPanel3.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.textPanel3.Location = new System.Drawing.Point(84, 248);
-            this.textPanel3.Name = "textPanel3";
-            this.textPanel3.Size = new System.Drawing.Size(186, 39);
-            this.textPanel3.TabIndex = 12;
-            this.textPanel3.TogglesBorder = true;
-            this.textPanel3.WatermarkColor = System.Drawing.Color.Gray;
-            this.textPanel3.WatermarkText = "Test Admin Last";
+            this.adminLastTextbox.BackColor = System.Drawing.Color.Transparent;
+            this.adminLastTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.adminLastTextbox.Location = new System.Drawing.Point(84, 248);
+            this.adminLastTextbox.Name = "adminLastTextbox";
+            this.adminLastTextbox.Size = new System.Drawing.Size(186, 39);
+            this.adminLastTextbox.TabIndex = 12;
+            this.adminLastTextbox.TogglesBorder = true;
+            this.adminLastTextbox.WatermarkColor = System.Drawing.Color.Gray;
+            this.adminLastTextbox.WatermarkText = "Test Admin Last";
             // 
-            // textPanel2
+            // adminFirstTextbox
             // 
-            this.textPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.textPanel2.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.textPanel2.Location = new System.Drawing.Point(84, 203);
-            this.textPanel2.Name = "textPanel2";
-            this.textPanel2.Size = new System.Drawing.Size(186, 39);
-            this.textPanel2.TabIndex = 11;
-            this.textPanel2.TogglesBorder = true;
-            this.textPanel2.WatermarkColor = System.Drawing.Color.Gray;
-            this.textPanel2.WatermarkText = "Test Admin First";
+            this.adminFirstTextbox.BackColor = System.Drawing.Color.Transparent;
+            this.adminFirstTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.adminFirstTextbox.Location = new System.Drawing.Point(84, 203);
+            this.adminFirstTextbox.Name = "adminFirstTextbox";
+            this.adminFirstTextbox.Size = new System.Drawing.Size(186, 39);
+            this.adminFirstTextbox.TabIndex = 11;
+            this.adminFirstTextbox.TogglesBorder = true;
+            this.adminFirstTextbox.WatermarkColor = System.Drawing.Color.Gray;
+            this.adminFirstTextbox.WatermarkText = "Test Admin First";
             // 
-            // textPanel1
+            // timeTextbox
             // 
-            this.textPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.textPanel1.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.textPanel1.Location = new System.Drawing.Point(9, 120);
-            this.textPanel1.Name = "textPanel1";
-            this.textPanel1.Size = new System.Drawing.Size(186, 39);
-            this.textPanel1.TabIndex = 10;
-            this.textPanel1.TogglesBorder = true;
-            this.textPanel1.WatermarkColor = System.Drawing.Color.Gray;
-            this.textPanel1.WatermarkText = "Time (hh:mm am/pm)";
+            this.timeTextbox.BackColor = System.Drawing.Color.Transparent;
+            this.timeTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.timeTextbox.Location = new System.Drawing.Point(9, 120);
+            this.timeTextbox.Name = "timeTextbox";
+            this.timeTextbox.Size = new System.Drawing.Size(186, 39);
+            this.timeTextbox.TabIndex = 10;
+            this.timeTextbox.TogglesBorder = true;
+            this.timeTextbox.WatermarkColor = System.Drawing.Color.Gray;
+            this.timeTextbox.WatermarkText = "Time (hh:mm am/pm)";
             // 
             // dateTextbox
             // 
@@ -256,7 +257,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.saveLabel);
             this.Controls.Add(this.patientInformationPanel);
             this.Controls.Add(this.testInformationPanel);
             this.Controls.Add(this.saveButton);
@@ -282,12 +283,12 @@
         private TextPanel patientLastTextbox;
         private TextPanel dateOfBirthTextbox;
         private System.Windows.Forms.Label testInformationLabel;
-        private TextPanel textPanel1;
+        private TextPanel timeTextbox;
         private TextPanel dateTextbox;
-        private System.Windows.Forms.TextBox textBox1;
-        private TextPanel textPanel3;
-        private TextPanel textPanel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox notesTextbox;
+        private TextPanel adminLastTextbox;
+        private TextPanel adminFirstTextbox;
+        private System.Windows.Forms.Label notesLabel;
+        private System.Windows.Forms.Label saveLabel;
     }
 }
