@@ -19,7 +19,6 @@ namespace _10_Meter_Walk
 
             //creation of event handlers
             createButtonEvents();
-            checkForDatabase();
         }
 
         private void createButtonEvents()
@@ -33,21 +32,6 @@ namespace _10_Meter_Walk
             //nested buttons
             form.NewTestPanel.TodayButton.Click += new EventHandler(onTodayButtonClicked);
             form.NewTestPanel.SaveButton.Click += new EventHandler(onSaveButtonClicked);
-        }
-
-        //checks if the database for the program already exists, if not, an attempt is made to create one
-        private void checkForDatabase()
-        {
-            try
-            {
-
-            }
-            catch
-            {
-                MessageBox.Show("Nothing happened");
-            }
-
-            
         }
 
         //shows and reposition the newTestPanel and highlightPanel, hides other panels not related to the button clicked
@@ -117,7 +101,18 @@ namespace _10_Meter_Walk
 
         private void saveData()
         {
+            string patientFirst = form.NewTestPanel.PatientFirstTextbox.Text;
+            string patientLast = form.NewTestPanel.PatientLastTextbox.Text;
+            string patientDOB = form.NewTestPanel.PatientDOBTextbox.Text;
+            string testTime = form.NewTestPanel.TestTimeTextbox.Text;
+            string testDate = form.NewTestPanel.TestDateTextbox.Text;
+            string adminName = form.NewTestPanel.AdminFirstTextbox.Text + " " +
+                form.NewTestPanel.AdminLastTextbox.Text;
+            string notes = form.NewTestPanel.NotesTextbox.Text;
 
+            SqliteDataAccess.SaveTest(new TestModel(
+                patientFirst, patientLast, patientDOB, testDate, testTime,
+                adminName, notes));
         }
 
         //removes text entered from the newTestPanel textboxes and restores their watermarks
