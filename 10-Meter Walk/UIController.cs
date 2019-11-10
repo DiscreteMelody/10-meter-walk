@@ -19,6 +19,7 @@ namespace _10_Meter_Walk
 
             //creation of event handlers
             createButtonEvents();
+            checkForDatabase();
         }
 
         private void createButtonEvents()
@@ -32,6 +33,21 @@ namespace _10_Meter_Walk
             //nested buttons
             form.NewTestPanel.TodayButton.Click += new EventHandler(onTodayButtonClicked);
             form.NewTestPanel.SaveButton.Click += new EventHandler(onSaveButtonClicked);
+        }
+
+        //checks if the database for the program already exists, if not, an attempt is made to create one
+        private void checkForDatabase()
+        {
+            try
+            {
+
+            }
+            catch
+            {
+                MessageBox.Show("Nothing happened");
+            }
+
+            
         }
 
         //shows and reposition the newTestPanel and highlightPanel, hides other panels not related to the button clicked
@@ -118,13 +134,15 @@ namespace _10_Meter_Walk
             {
                 textpanels[i].clearText();
             }
+
+            panel.NotesTextbox.Clear();
         }
 
         //checks if inputs are valid and if they are not, shows message to the user which input is invalid and why
         private bool newTestInputsAreValid()
         {
             string inputText = "";
-            string nameFormat = @"^[a-zA-Z]|[-]{1,25}$";    //names are A-Z with hyphens and between 1-25 characters
+            string nameFormat = @"^([a-zA-Z]|\-){1,25}$";    //names are A-Z with hyphens and between 1-25 characters
             string nameFormatErrorMessage = "Names can only contain hyphens, letters A-Z, and cannot be longer than 25 characters.";
             string dateFormat = @"^[0-1]{1}[0-9]{1}\/[0-9]{2}\/[0-9]{4}$";  //dates are mm/dd/yyyy format
             string dateFormatErrorMessage = "Dates should be formatted mm/dd/yyyy. January 15th, 2007 would be 01/15/2007";
