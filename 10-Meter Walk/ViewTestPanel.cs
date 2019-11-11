@@ -29,6 +29,10 @@ namespace _10_Meter_Walk
         {
             get { return this.searchButton; }
         }
+        public ListView TestsListView
+        {
+            get { return this.testsListView; }
+        }
 
         public ViewTestPanel()
         {

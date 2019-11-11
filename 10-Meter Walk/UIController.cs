@@ -107,6 +107,33 @@ namespace _10_Meter_Walk
         {
             tests = SqliteDataAccess.LoadTests("test", "test", "test");
 
+            clearTestListView();
+            displaySearchResults();
+            clearSearchTextboxes();
+        }
+
+        //populates the testsListView with query results from the database
+        private void displaySearchResults()
+        {
+            foreach (TestModel test in tests)
+            {
+                ListViewItem item = new ListViewItem(test.PatientFirst + " " + test.PatientLast);
+                item.SubItems.Add(test.TestDate);
+                item.SubItems.Add(test.Notes);
+                form.ViewTestPanel.TestsListView.Items.Add(item);
+            }
+        }
+
+        private void clearSearchTextboxes()
+        {
+            form.ViewTestPanel.PatientFirstTextbox.clearText();
+            form.ViewTestPanel.PatientLastTextbox.clearText();
+            form.ViewTestPanel.DateOfBirthTextbox.clearText();
+        }
+
+        private void clearTestListView()
+        {
+            form.ViewTestPanel.TestsListView.Items.Clear();
         }
 
         //writes inputs from newTestPanel into the database

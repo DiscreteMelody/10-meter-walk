@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.patientInformationPanel = new System.Windows.Forms.Panel();
-            this.patientInformationLabel = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.dateOfBirthTextbox = new _10_Meter_Walk.TextPanel();
             this.patientLastTextbox = new _10_Meter_Walk.TextPanel();
             this.patientFirstTextbox = new _10_Meter_Walk.TextPanel();
+            this.patientInformationLabel = new System.Windows.Forms.Label();
             this.recordsPanel = new System.Windows.Forms.Panel();
-            this.recordsTable = new System.Windows.Forms.DataGridView();
+            this.testsListView = new System.Windows.Forms.ListView();
+            this.patientNameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.testDateHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.notesHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.patientInformationPanel.SuspendLayout();
             this.recordsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.recordsTable)).BeginInit();
             this.SuspendLayout();
             // 
             // patientInformationPanel
@@ -53,17 +55,6 @@
             this.patientInformationPanel.Name = "patientInformationPanel";
             this.patientInformationPanel.Size = new System.Drawing.Size(316, 279);
             this.patientInformationPanel.TabIndex = 5;
-            // 
-            // patientInformationLabel
-            // 
-            this.patientInformationLabel.AutoSize = true;
-            this.patientInformationLabel.BackColor = System.Drawing.Color.Transparent;
-            this.patientInformationLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientInformationLabel.Location = new System.Drawing.Point(14, 15);
-            this.patientInformationLabel.Name = "patientInformationLabel";
-            this.patientInformationLabel.Size = new System.Drawing.Size(289, 32);
-            this.patientInformationLabel.TabIndex = 0;
-            this.patientInformationLabel.Text = "Search Previous Tests";
             // 
             // searchButton
             // 
@@ -120,25 +111,56 @@
             this.patientFirstTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.patientFirstTextbox.WatermarkText = "Patient First Name";
             // 
+            // patientInformationLabel
+            // 
+            this.patientInformationLabel.AutoSize = true;
+            this.patientInformationLabel.BackColor = System.Drawing.Color.Transparent;
+            this.patientInformationLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientInformationLabel.Location = new System.Drawing.Point(14, 15);
+            this.patientInformationLabel.Name = "patientInformationLabel";
+            this.patientInformationLabel.Size = new System.Drawing.Size(289, 32);
+            this.patientInformationLabel.TabIndex = 0;
+            this.patientInformationLabel.Text = "Search Previous Tests";
+            // 
             // recordsPanel
             // 
             this.recordsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.recordsPanel.Controls.Add(this.recordsTable);
+            this.recordsPanel.Controls.Add(this.testsListView);
             this.recordsPanel.Location = new System.Drawing.Point(3, 288);
             this.recordsPanel.Name = "recordsPanel";
             this.recordsPanel.Size = new System.Drawing.Size(628, 195);
             this.recordsPanel.TabIndex = 6;
             // 
-            // recordsTable
+            // testsListView
             // 
-            this.recordsTable.AllowUserToDeleteRows = false;
-            this.recordsTable.AllowUserToOrderColumns = true;
-            this.recordsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.recordsTable.Location = new System.Drawing.Point(3, 26);
-            this.recordsTable.Name = "recordsTable";
-            this.recordsTable.ReadOnly = true;
-            this.recordsTable.Size = new System.Drawing.Size(622, 150);
-            this.recordsTable.TabIndex = 0;
+            this.testsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.patientNameHeader,
+            this.testDateHeader,
+            this.notesHeader});
+            this.testsListView.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testsListView.FullRowSelect = true;
+            this.testsListView.GridLines = true;
+            this.testsListView.Location = new System.Drawing.Point(4, 4);
+            this.testsListView.Name = "testsListView";
+            this.testsListView.Size = new System.Drawing.Size(621, 188);
+            this.testsListView.TabIndex = 0;
+            this.testsListView.UseCompatibleStateImageBehavior = false;
+            this.testsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // patientNameHeader
+            // 
+            this.patientNameHeader.Text = "Patient Name";
+            this.patientNameHeader.Width = 176;
+            // 
+            // testDateHeader
+            // 
+            this.testDateHeader.Text = "Date of Test";
+            this.testDateHeader.Width = 92;
+            // 
+            // notesHeader
+            // 
+            this.notesHeader.Text = "Notes";
+            this.notesHeader.Width = 381;
             // 
             // ViewTestPanel
             // 
@@ -151,7 +173,6 @@
             this.patientInformationPanel.ResumeLayout(false);
             this.patientInformationPanel.PerformLayout();
             this.recordsPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.recordsTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,6 +186,9 @@
         private System.Windows.Forms.Label patientInformationLabel;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Panel recordsPanel;
-        private System.Windows.Forms.DataGridView recordsTable;
+        private System.Windows.Forms.ListView testsListView;
+        private System.Windows.Forms.ColumnHeader patientNameHeader;
+        private System.Windows.Forms.ColumnHeader testDateHeader;
+        private System.Windows.Forms.ColumnHeader notesHeader;
     }
 }
