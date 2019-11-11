@@ -12,12 +12,17 @@ namespace _10_Meter_Walk
 {
     public class SqliteDataAccess
     {
-        public static List<TestModel> LoadTests()
+        /// <summary>
+        /// returns a list of tests where the database records match the given inputs
+        /// </summary>
+        /// <returns></returns>
+        public static List<TestModel> LoadTests(string patient_first, string patient_last, string patient_DOB)
         {
+            
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<TestModel>("select * from Tests", new DynamicParameters());
-                return output.ToList();
+                var output = cnn.Query<TestModel>("select * from Tests").ToList();
+                return output;
             }
         }
 

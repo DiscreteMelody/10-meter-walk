@@ -12,6 +12,7 @@ namespace _10_Meter_Walk
     public class UIController
     {
         private PrimaryForm form;
+        private List<TestModel> tests = new List<TestModel>();
 
         public UIController(PrimaryForm form_to_manipulate)
         {
@@ -32,6 +33,7 @@ namespace _10_Meter_Walk
             //nested buttons
             form.NewTestPanel.TodayButton.Click += new EventHandler(onTodayButtonClicked);
             form.NewTestPanel.SaveButton.Click += new EventHandler(onSaveButtonClicked);
+            form.ViewTestPanel.SearchButton.Click += new EventHandler(onSearchButtonClicked);
         }
 
         //shows and reposition the newTestPanel and highlightPanel, hides other panels not related to the button clicked
@@ -84,12 +86,14 @@ namespace _10_Meter_Walk
             Application.Exit();
         }
 
+        //sets the date and time textbox text to the current date and time
         private void onTodayButtonClicked(object sender, EventArgs e)
         {
             form.NewTestPanel.TestTimeTextbox.Text = DateTime.Now.ToString("hh:mm tt");
             form.NewTestPanel.TestDateTextbox.Text = DateTime.Now.ToString("MM/dd/yyyy");
         }
 
+        //saves the newTest inputs to the database if the inputs are valid
         private void onSaveButtonClicked(object sender, EventArgs e)
         {
             if (!newTestInputsAreValid())
@@ -99,6 +103,12 @@ namespace _10_Meter_Walk
             clearNewTestInputs();
         }
 
+        private void onSearchButtonClicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        //writes inputs from newTestPanel into the database
         private void saveData()
         {
             string patientFirst = form.NewTestPanel.PatientFirstTextbox.Text;
