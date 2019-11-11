@@ -13,11 +13,13 @@ namespace _10_Meter_Walk
     {
         private PrimaryForm form;
         private List<TestModel> tests = new List<TestModel>();
+        private List<Button> menuButtons = new List<Button>();
         private int selectedTestIndex;
 
         public UIController(PrimaryForm form_to_manipulate)
         {
             this.form = form_to_manipulate;
+            menuButtons = new List<Button>() { form.NewTestButton, form.ViewTestButton, form.HelpButton };
 
             //creation of event handlers
             createButtonEvents();
@@ -142,7 +144,9 @@ namespace _10_Meter_Walk
         {
             if (testIsSelected() == false)
                 return;
-                
+
+            if (ConfirmationBox.ShowConfirmationScreen("Really delete the selected record? This action cannot be undone.") == false)
+                return;
 
             SqliteDataAccess.deleteRecord(tests[selectedTestIndex]);
             form.ViewTestPanel.TestsListView.Items[selectedTestIndex].Remove();

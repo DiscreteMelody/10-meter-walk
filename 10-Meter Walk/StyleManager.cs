@@ -12,6 +12,10 @@ namespace _10_Meter_Walk
     {
         private static Brush brush;
         private static Pen pen;
+        private static Color pressedButtonColor = Color.FromArgb(3, 169, 244);
+        private static Color normalButtonColor = Color.FromArgb(0, 191, 255);
+        private static Color hoveredButtonColor = Color.FromArgb(92, 214, 255);
+        private static Color selectedButtonColor = Color.FromArgb(168, 233, 255);
 
         /// <summary>
         /// Paints a circle around a circular button
@@ -33,6 +37,24 @@ namespace _10_Meter_Walk
                 //do nothing
             }
             
+        }
+
+        /// <summary>
+        /// sets a menu button a different color than the other buttons
+        /// </summary>
+        /// <param name="button">The button to recolor</param>
+        public static void setButtonAsSelected(Button button)
+        {
+            button.BackColor = selectedButtonColor;
+        }
+
+        /// <summary>
+        /// resets a menu button to its original color
+        /// </summary>
+        /// <param name="button"></param>
+        public static void setButtonAsNormal(Button button)
+        {
+            button.BackColor = normalButtonColor;
         }
     }
 }
