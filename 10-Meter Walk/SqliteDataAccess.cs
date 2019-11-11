@@ -31,12 +31,9 @@ namespace _10_Meter_Walk
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                string queryString = "insert into Tests (First, Last, \'Date of Birth\', \'Test Date\', \'Test Time\', Notes, \'Admin Name\') " +
-                    "values(\"" + test.PatientFirst + "\", \"" + test.PatientLast + "\", \"" +
-                    test.PatientDOB + "\", \"" + test.TestDate + "\", \"" + test.TestTime + "\", \"" +
-                    test.Notes + "\", \"" + test.AdminName + "\")";
-                Console.WriteLine(queryString);
-                cnn.Execute(queryString);
+                string queryString = @"insert into Tests (First, Last, 'Date of Birth', 'Test Date', 'Test Time', Notes, 'Admin Name') " +
+                    @"values(@PatientFirst, @PatientLast, @PatientDOB, @TestDate, @TestTime, @Notes, @AdminName)";
+                cnn.Execute(queryString, test);
             }
         }
 
