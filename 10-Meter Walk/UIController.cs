@@ -105,7 +105,8 @@ namespace _10_Meter_Walk
 
         private void onSearchButtonClicked(object sender, EventArgs e)
         {
-            
+            tests = SqliteDataAccess.LoadTests("test", "test", "test");
+
         }
 
         //writes inputs from newTestPanel into the database
@@ -120,9 +121,16 @@ namespace _10_Meter_Walk
                 form.NewTestPanel.AdminLastTextbox.Text;
             string notes = form.NewTestPanel.NotesTextbox.Text;
 
-            SqliteDataAccess.SaveTest(new TestModel(
-                patientFirst, patientLast, patientDOB, testDate, testTime,
-                adminName, notes));
+            TestModel newTest = new TestModel();
+            newTest.PatientFirst = patientFirst;
+            newTest.PatientLast = patientLast;
+            newTest.PatientDOB = patientDOB;
+            newTest.TestTime = testTime;
+            newTest.TestDate = testDate;
+            newTest.AdminName = adminName;
+            newTest.Notes = notes;
+
+            SqliteDataAccess.SaveTest(newTest);
         }
 
         //removes text entered from the newTestPanel textboxes and restores their watermarks

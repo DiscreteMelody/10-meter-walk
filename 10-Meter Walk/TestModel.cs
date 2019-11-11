@@ -20,43 +20,37 @@ namespace _10_Meter_Walk
         public string PatientFirst
         {
             get { return this.patientFirst; }
+            set { patientFirst = value; }
         }
         public string PatientLast
         {
             get { return this.patientLast; }
+            set { patientLast = value; }
         }
         public string PatientDOB
         {
             get { return this.patientDOB; }
+            set { patientDOB = value; }
         }
         public string TestDate
         {
             get { return this.testDate; }
+            set { testDate = value; }
         }
         public string TestTime
         {
             get { return this.testTime; }
+            set { testTime = value; }
         }
         public string AdminName
         {
             get { return this.adminName; }
+            set { adminName = value; }
         }
         public string Notes
         {
             get { return this.notes; }
-        }
-
-        public TestModel(
-            string patient_first, string patient_last, string patient_DOB,
-            string test_date, string test_time, string admin_name, string test_notes)
-        {
-            patientFirst = patient_first;
-            patientLast = patient_last;
-            patientDOB = patient_DOB;
-            testDate = test_date;
-            testTime = test_time;
-            adminName = admin_name;
-            notes = test_notes;
+            set { notes = value; }
         }
     }
 }

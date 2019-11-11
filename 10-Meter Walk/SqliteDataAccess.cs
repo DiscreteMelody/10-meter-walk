@@ -21,8 +21,8 @@ namespace _10_Meter_Walk
             
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<TestModel>("select * from Tests").ToList();
-                return output;
+                var output = cnn.Query<TestModel>(@"select * from Tests", new DynamicParameters());
+                return output.ToList();
             }
         }
 
@@ -31,7 +31,7 @@ namespace _10_Meter_Walk
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                string queryString = @"insert into Tests (First, Last, 'Date of Birth', 'Test Date', 'Test Time', Notes, 'Admin Name') " +
+                string queryString = @"insert into Tests (PatientFirst, PatientLast, PatientDOB, TestDate, TestTime, Notes, AdminName) " +
                     @"values(@PatientFirst, @PatientLast, @PatientDOB, @TestDate, @TestTime, @Notes, @AdminName)";
                 cnn.Execute(queryString, test);
             }
