@@ -260,6 +260,8 @@ namespace _10_Meter_Walk
             string dateFormatErrorMessage = "Dates should be formatted mm/dd/yyyy. January 15th, 2007 would be 01/15/2007";
             string timeFormat = @"^[0-9]{2}:{1}[0-9]{2} {1}[AaPp][mM]$";   //times are in hh:mm am/pm format
             string timeFormatErrorMessage = "Times should be formatted hh:mm am/pm. 1:40 pm would be 01:40 pm";
+            string noteFormat = @"^[a-zA-Z]{1,1000}$";    //notes are A-Z and up to 1000 characters
+            string noteFormatErrorMessage = "Notes must be between 1-1000 characters and not contain any special characters";
 
             TextPanel[] nameTextboxes = new TextPanel[] {   //to be checked using the nameFormat
                 form.NewTestPanel.PatientFirstTextbox, form.NewTestPanel.PatientLastTextbox,
@@ -305,6 +307,14 @@ namespace _10_Meter_Walk
                     showInvalidEntry(timeTextboxes[i], timeFormatErrorMessage);
                     return false;
                 }
+            }
+
+            //validate the notes entered
+            inputText = form.NewTestPanel.NotesTextbox.Text;
+            if(Regex.IsMatch(inputText, noteFormat) == false)
+            {
+                showInvalidEntry(form.NewTestPanel.NotesTextbox, noteFormatErrorMessage);
+                return false;
             }
 
             return true;
