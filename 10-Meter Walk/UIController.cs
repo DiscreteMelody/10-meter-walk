@@ -108,9 +108,9 @@ namespace _10_Meter_Walk
 
         private void onSearchButtonClicked(object sender, EventArgs e)
         {
-            string patientFirst = form.ViewTestPanel.PatientFirstTextbox.Text;
-            string patientLast = form.ViewTestPanel.PatientLastTextbox.Text;
-            string dateOfBirth = form.ViewTestPanel.DateOfBirthTextbox.Text;
+            string patientFirst = form.ViewTestPanel.PatientFirstTextbox.Text.ToLower();
+            string patientLast = form.ViewTestPanel.PatientLastTextbox.Text.ToLower();
+            string dateOfBirth = form.ViewTestPanel.DateOfBirthTextbox.Text.ToLower();
 
             tests = SqliteDataAccess.LoadTests(patientFirst, patientLast, dateOfBirth);
 
@@ -168,20 +168,6 @@ namespace _10_Meter_Walk
             selectedTestIndex = form.ViewTestPanel.TestsListView.SelectedIndices[0];
         }
 
-        //TODO ideally this would sort the displayed tests by the column clicked
-        private void onTestsListViewHeaderClicked(object sender, ColumnClickEventArgs e)
-        {
-            ListView listview = form.ViewTestPanel.TestsListView;
-
-            for (int i = 0; i < listview.Columns.Count; i++)
-            {
-                if(listview.Columns[i].Index == e.Column)
-                {
-                    MessageBox.Show(i.ToString());
-                }
-            }
-        }
-
         //populates the testsListView with query results from the database
         private void displaySearchResults()
         {
@@ -221,13 +207,13 @@ namespace _10_Meter_Walk
             string notes = form.NewTestPanel.NotesTextbox.Text;
 
             TestModel newTest = new TestModel();
-            newTest.PatientFirst = patientFirst;
-            newTest.PatientLast = patientLast;
-            newTest.PatientDOB = patientDOB;
-            newTest.TestTime = testTime;
-            newTest.TestDate = testDate;
-            newTest.AdminName = adminName;
-            newTest.Notes = notes;
+            newTest.PatientFirst = patientFirst.ToLower();
+            newTest.PatientLast = patientLast.ToLower();
+            newTest.PatientDOB = patientDOB.ToLower(); ;
+            newTest.TestTime = testTime.ToLower();
+            newTest.TestDate = testDate.ToLower();
+            newTest.AdminName = adminName.ToLower();
+            newTest.Notes = notes.ToLower();
 
             SqliteDataAccess.SaveTest(newTest);
         }
@@ -254,14 +240,6 @@ namespace _10_Meter_Walk
         private bool newTestInputsAreValid()
         {
             string inputText = "";
-            string nameFormat = @"^([a-zA-Z]|\-){1,25}$";    //names are A-Z with hyphens and between 1-25 characters
-            string nameFormatErrorMessage = "Names can only contain hyphens, letters A-Z, and cannot be longer than 25 characters.";
-            string dateFormat = @"^[0-1]{1}[0-9]{1}\/[0-9]{2}\/[0-9]{4}$";  //dates are mm/dd/yyyy format
-            string dateFormatErrorMessage = "Dates should be formatted mm/dd/yyyy. January 15th, 2007 would be 01/15/2007";
-            string timeFormat = @"^[0-9]{2}:{1}[0-9]{2} {1}[AaPp][mM]$";   //times are in hh:mm am/pm format
-            string timeFormatErrorMessage = "Times should be formatted hh:mm am/pm. 1:40 pm would be 01:40 pm";
-            string noteFormat = @"^[a-zA-Z]{1,1000}$";    //notes are A-Z and up to 1000 characters
-            string noteFormatErrorMessage = "Notes must be between 1-1000 characters and not contain any special characters";
 
             TextPanel[] nameTextboxes = new TextPanel[] {   //to be checked using the nameFormat
                 form.NewTestPanel.PatientFirstTextbox, form.NewTestPanel.PatientLastTextbox,
@@ -275,14 +253,15 @@ namespace _10_Meter_Walk
             {
                 form.NewTestPanel.TestTimeTextbox   //useful if there are multiple boxes to check
             };
+            TextBox notesTextbox = form.NewTestPanel.NotesTextbox;
 
             //validate name fields
-            for(int i = 0; i < nameTextboxes.Length; i++)
+            for (int i = 0; i < nameTextboxes.Length; i++)
             {
                 inputText = nameTextboxes[i].Text;
-                if(Regex.IsMatch(inputText, nameFormat) == false)
+                if(ValidationManager.inputIsValid(inputText, ValidationManager.ValidationTypes.Name) == false)
                 {
-                    showInvalidEntry(nameTextboxes[i], nameFormatErrorMessage);
+                    nameTextboxes[i].Focus();
                     return false;
                 }
             }
@@ -291,9 +270,9 @@ namespace _10_Meter_Walk
             for (int i = 0; i < dateTextboxes.Length; i++)
             {
                 inputText = dateTextboxes[i].Text;
-                if (Regex.IsMatch(inputText, dateFormat) == false)
+                if (ValidationManager.inputIsValid(inputText, ValidationManager.ValidationTypes.Date) == false)
                 {
-                    showInvalidEntry(dateTextboxes[i], dateFormatErrorMessage);
+                    dateTextboxes[i].Focus();
                     return false;
                 }
             }
@@ -302,29 +281,22 @@ namespace _10_Meter_Walk
             for (int i = 0; i < timeTextboxes.Length; i++)
             {
                 inputText = timeTextboxes[i].Text;
-                if (Regex.IsMatch(inputText, timeFormat) == false)
+                if (ValidationManager.inputIsValid(inputText, ValidationManager.ValidationTypes.Time) == false)
                 {
-                    showInvalidEntry(timeTextboxes[i], timeFormatErrorMessage);
+                    timeTextboxes[i].Focus();
                     return false;
                 }
             }
 
             //validate the notes entered
-            inputText = form.NewTestPanel.NotesTextbox.Text;
-            if(Regex.IsMatch(inputText, noteFormat) == false)
+            inputText = notesTextbox.Text;
+            if (ValidationManager.inputIsValid(inputText, ValidationManager.ValidationTypes.Notes) == false)
             {
-                showInvalidEntry(form.NewTestPanel.NotesTextbox, noteFormatErrorMessage);
+                notesTextbox.Focus();
                 return false;
             }
 
             return true;
-        }
-
-        //points the user to which entry is invalid
-        private void showInvalidEntry(Control invalid_control, string message_to_show)
-        {
-            invalid_control.Focus();
-            MessageBox.Show(message_to_show);
         }
     }
 }

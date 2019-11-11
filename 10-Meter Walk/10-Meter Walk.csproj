@@ -69,6 +69,7 @@
     <Compile Include="CircularButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ValidationManager.cs" />
     <Compile Include="HelpPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
