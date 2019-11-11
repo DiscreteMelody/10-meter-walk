@@ -21,12 +21,37 @@ namespace _10_Meter_Walk
             
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<TestModel>(@"select * from Tests", new DynamicParameters());
+                string sqlQuery = @"select * from Tests where PatientFirst = '" + patient_first + @"' and PatientLast = '" + patient_last + @"' and PatientDOB = '" + patient_DOB + @"'";
+                var output = cnn.Query<TestModel>(sqlQuery, new DynamicParameters());
                 return output.ToList();
             }
         }
 
-        //executes an insert statement to the sqlite database
+        /// <summary>
+        /// deletes the first instance of a matching test
+        /// </summary>
+        /// <param name="test">the test to be deleted</param>
+        public static void deleteRecord(TestModel test)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                string sqlQuery = 
+                    @"delete from Tests where PatientFirst = '" + test.PatientFirst + @"' and " +
+                    @"PatientLast = '" + test.PatientLast + @"' and " +
+                    @"PatientDOB = '" + test.PatientDOB + @"' and " +
+                    @"TestDate = '" + test.TestDate + @"' and " +
+                    @"TestTime = '" + test.TestTime + @"' and " +
+                    @"Notes = '" + test.Notes + @"' and " +
+                    @"AdminName = '" + test.AdminName + @"'";
+
+                cnn.Query(sqlQuery, new DynamicParameters());
+            }
+        }
+
+        /// <summary>
+        /// executes an insert statement to the sqlite database
+        /// </summary>
+        /// <param name="test">The test to save</param>
         public static void SaveTest(TestModel test)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))

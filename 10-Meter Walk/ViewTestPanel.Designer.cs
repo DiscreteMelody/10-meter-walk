@@ -39,6 +39,10 @@
             this.patientNameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.testDateHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.notesHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.deleteLabel = new System.Windows.Forms.Label();
+            this.viewLabel = new System.Windows.Forms.Label();
+            this.viewFullTestButton = new _10_Meter_Walk.CircularButton();
+            this.deleteTestButton = new _10_Meter_Walk.CircularButton();
             this.patientInformationPanel.SuspendLayout();
             this.recordsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -141,6 +145,7 @@
             this.testsListView.FullRowSelect = true;
             this.testsListView.GridLines = true;
             this.testsListView.Location = new System.Drawing.Point(4, 4);
+            this.testsListView.MultiSelect = false;
             this.testsListView.Name = "testsListView";
             this.testsListView.Size = new System.Drawing.Size(621, 188);
             this.testsListView.TabIndex = 0;
@@ -162,18 +167,83 @@
             this.notesHeader.Text = "Notes";
             this.notesHeader.Width = 381;
             // 
+            // deleteLabel
+            // 
+            this.deleteLabel.AutoSize = true;
+            this.deleteLabel.BackColor = System.Drawing.Color.Transparent;
+            this.deleteLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteLabel.Location = new System.Drawing.Point(515, 180);
+            this.deleteLabel.Name = "deleteLabel";
+            this.deleteLabel.Size = new System.Drawing.Size(77, 25);
+            this.deleteLabel.TabIndex = 11;
+            this.deleteLabel.Text = "Delete";
+            // 
+            // viewLabel
+            // 
+            this.viewLabel.AutoSize = true;
+            this.viewLabel.BackColor = System.Drawing.Color.Transparent;
+            this.viewLabel.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewLabel.Location = new System.Drawing.Point(375, 180);
+            this.viewLabel.Name = "viewLabel";
+            this.viewLabel.Size = new System.Drawing.Size(62, 25);
+            this.viewLabel.TabIndex = 13;
+            this.viewLabel.Text = "View";
+            // 
+            // viewFullTestButton
+            // 
+            this.viewFullTestButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.viewFullTestButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.viewFullTestButton.BorderRadius = 20F;
+            this.viewFullTestButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewFullTestButton.FlatAppearance.BorderSize = 0;
+            this.viewFullTestButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.viewFullTestButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
+            this.viewFullTestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewFullTestButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewFullTestButton.Image = global::_10_Meter_Walk.Properties.Resources.glasses;
+            this.viewFullTestButton.Location = new System.Drawing.Point(364, 90);
+            this.viewFullTestButton.Name = "viewFullTestButton";
+            this.viewFullTestButton.Size = new System.Drawing.Size(82, 82);
+            this.viewFullTestButton.TabIndex = 12;
+            this.viewFullTestButton.UseVisualStyleBackColor = false;
+            // 
+            // deleteTestButton
+            // 
+            this.deleteTestButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.deleteTestButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.deleteTestButton.BorderRadius = 20F;
+            this.deleteTestButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteTestButton.FlatAppearance.BorderSize = 0;
+            this.deleteTestButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
+            this.deleteTestButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
+            this.deleteTestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteTestButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteTestButton.Image = global::_10_Meter_Walk.Properties.Resources.trash;
+            this.deleteTestButton.Location = new System.Drawing.Point(513, 90);
+            this.deleteTestButton.Name = "deleteTestButton";
+            this.deleteTestButton.Size = new System.Drawing.Size(82, 82);
+            this.deleteTestButton.TabIndex = 10;
+            this.deleteTestButton.UseVisualStyleBackColor = false;
+            // 
             // ViewTestPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.viewLabel);
+            this.Controls.Add(this.viewFullTestButton);
+            this.Controls.Add(this.deleteLabel);
+            this.Controls.Add(this.deleteTestButton);
             this.Controls.Add(this.recordsPanel);
             this.Controls.Add(this.patientInformationPanel);
             this.Name = "ViewTestPanel";
             this.Size = new System.Drawing.Size(634, 486);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewTestPanel_Paint);
             this.patientInformationPanel.ResumeLayout(false);
             this.patientInformationPanel.PerformLayout();
             this.recordsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -190,5 +260,9 @@
         private System.Windows.Forms.ColumnHeader patientNameHeader;
         private System.Windows.Forms.ColumnHeader testDateHeader;
         private System.Windows.Forms.ColumnHeader notesHeader;
+        private System.Windows.Forms.Label deleteLabel;
+        private CircularButton deleteTestButton;
+        private System.Windows.Forms.Label viewLabel;
+        private CircularButton viewFullTestButton;
     }
 }

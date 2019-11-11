@@ -59,6 +59,7 @@ namespace _10_Meter_Walk
             InitializeComponent();
         }
 
+        //paint a circular border around the save button
         private void New_Test_Panel_Paint(object sender, PaintEventArgs e)
         {
             StyleManager.addCircularBorder(saveButton, e);

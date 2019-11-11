@@ -33,10 +33,24 @@ namespace _10_Meter_Walk
         {
             get { return this.testsListView; }
         }
+        public Button ViewFullTestButton
+        {
+            get { return this.viewFullTestButton; }
+        }
+        public Button DeleteTestButton
+        {
+            get { return this.deleteTestButton; }
+        }
 
         public ViewTestPanel()
         {
             InitializeComponent();
+        }
+
+        private void ViewTestPanel_Paint(object sender, PaintEventArgs e)
+        {
+            StyleManager.addCircularBorder(viewFullTestButton, e);
+            StyleManager.addCircularBorder(deleteTestButton, e);
         }
     }
 }

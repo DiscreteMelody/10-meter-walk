@@ -13,6 +13,7 @@ namespace _10_Meter_Walk
     {
         private PrimaryForm form;
         private List<TestModel> tests = new List<TestModel>();
+        private int selectedTestIndex;
 
         public UIController(PrimaryForm form_to_manipulate)
         {
@@ -34,6 +35,8 @@ namespace _10_Meter_Walk
             form.NewTestPanel.TodayButton.Click += new EventHandler(onTodayButtonClicked);
             form.NewTestPanel.SaveButton.Click += new EventHandler(onSaveButtonClicked);
             form.ViewTestPanel.SearchButton.Click += new EventHandler(onSearchButtonClicked);
+            form.ViewTestPanel.ViewFullTestButton.Click += new EventHandler(onViewFullTestButtonClicked);
+            form.ViewTestPanel.DeleteTestButton.Click += new EventHandler(onDeleteTestButtonClicked);
         }
 
         //shows and reposition the newTestPanel and highlightPanel, hides other panels not related to the button clicked
@@ -105,11 +108,78 @@ namespace _10_Meter_Walk
 
         private void onSearchButtonClicked(object sender, EventArgs e)
         {
-            tests = SqliteDataAccess.LoadTests("test", "test", "test");
+            string patientFirst = form.ViewTestPanel.PatientFirstTextbox.Text;
+            string patientLast = form.ViewTestPanel.PatientLastTextbox.Text;
+            string dateOfBirth = form.ViewTestPanel.DateOfBirthTextbox.Text;
+
+            tests = SqliteDataAccess.LoadTests(patientFirst, patientLast, dateOfBirth);
 
             clearTestListView();
             displaySearchResults();
             clearSearchTextboxes();
+        }
+
+        //TODO make a more elegant looking form to display the information
+        private void onViewFullTestButtonClicked(object sender, EventArgs e)
+        {
+            if (testIsSelected() == false)
+                return;
+
+            TestModel selectedTest = tests[selectedTestIndex];
+
+            //replace this with a more beautiful looking window if I have time
+            string message = "Patient name:\t" + selectedTest.PatientFirst + " " + selectedTest.PatientLast +
+                "\nPatient DoB:\t" + selectedTest.PatientDOB +
+                "\nTest Date:\t" + selectedTest.TestDate +
+                "\nTest Time:\t" + selectedTest.TestTime +
+                "\nTest Admin:\t" + selectedTest.AdminName +
+                "\nNotes:\n" + selectedTest.Notes;
+            MessageBox.Show(message);
+
+        }
+
+        private void onDeleteTestButtonClicked(object sender, EventArgs e)
+        {
+            if (testIsSelected() == false)
+                return;
+                
+
+            SqliteDataAccess.deleteRecord(tests[selectedTestIndex]);
+            form.ViewTestPanel.TestsListView.Items[selectedTestIndex].Remove();
+        }
+
+        //returns if a test is selected from the list view
+        private bool testIsSelected()
+        {
+            if (form.ViewTestPanel.TestsListView.SelectedIndices.Count == 0)
+            {
+                MessageBox.Show("No tests are selected");
+                return false;
+            }
+
+            //here to prevent redundancy
+            setSelectedTestIndex();
+            return true;
+        }
+
+        //sets the selectedTestIndex of the user-selected test in the viewPanel
+        private void setSelectedTestIndex()
+        {
+            selectedTestIndex = form.ViewTestPanel.TestsListView.SelectedIndices[0];
+        }
+
+        //TODO ideally this would sort the displayed tests by the column clicked
+        private void onTestsListViewHeaderClicked(object sender, ColumnClickEventArgs e)
+        {
+            ListView listview = form.ViewTestPanel.TestsListView;
+
+            for (int i = 0; i < listview.Columns.Count; i++)
+            {
+                if(listview.Columns[i].Index == e.Column)
+                {
+                    MessageBox.Show(i.ToString());
+                }
+            }
         }
 
         //populates the testsListView with query results from the database
@@ -124,6 +194,7 @@ namespace _10_Meter_Walk
             }
         }
 
+        //clears the textboxes on the viewTestPanel
         private void clearSearchTextboxes()
         {
             form.ViewTestPanel.PatientFirstTextbox.clearText();
@@ -131,6 +202,7 @@ namespace _10_Meter_Walk
             form.ViewTestPanel.DateOfBirthTextbox.clearText();
         }
 
+        //clears the listview displaying results on the viewTestPanel
         private void clearTestListView()
         {
             form.ViewTestPanel.TestsListView.Items.Clear();
@@ -238,6 +310,7 @@ namespace _10_Meter_Walk
             return true;
         }
 
+        //points the user to which entry is invalid
         private void showInvalidEntry(Control invalid_control, string message_to_show)
         {
             invalid_control.Focus();
