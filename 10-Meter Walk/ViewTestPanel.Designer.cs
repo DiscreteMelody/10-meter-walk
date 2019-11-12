@@ -38,6 +38,7 @@
             this.testsListView = new System.Windows.Forms.ListView();
             this.patientNameHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.testDateHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.notesHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.deleteLabel = new System.Windows.Forms.Label();
             this.viewLabel = new System.Windows.Forms.Label();
@@ -140,6 +141,7 @@
             this.testsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.patientNameHeader,
             this.testDateHeader,
+            this.timeHeader,
             this.notesHeader});
             this.testsListView.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.testsListView.FullRowSelect = true;
@@ -155,17 +157,22 @@
             // patientNameHeader
             // 
             this.patientNameHeader.Text = "Patient Name";
-            this.patientNameHeader.Width = 176;
+            this.patientNameHeader.Width = 116;
             // 
             // testDateHeader
             // 
             this.testDateHeader.Text = "Date of Test";
             this.testDateHeader.Width = 92;
             // 
+            // timeHeader
+            // 
+            this.timeHeader.Text = "Time";
+            this.timeHeader.Width = 86;
+            // 
             // notesHeader
             // 
             this.notesHeader.Text = "Notes";
-            this.notesHeader.Width = 381;
+            this.notesHeader.Width = 305;
             // 
             // deleteLabel
             // 
@@ -259,10 +266,11 @@
         private System.Windows.Forms.ListView testsListView;
         private System.Windows.Forms.ColumnHeader patientNameHeader;
         private System.Windows.Forms.ColumnHeader testDateHeader;
-        private System.Windows.Forms.ColumnHeader notesHeader;
+        private System.Windows.Forms.ColumnHeader timeHeader;
         private System.Windows.Forms.Label deleteLabel;
         private CircularButton deleteTestButton;
         private System.Windows.Forms.Label viewLabel;
         private CircularButton viewFullTestButton;
+        private System.Windows.Forms.ColumnHeader notesHeader;
     }
 }

@@ -23,6 +23,14 @@ namespace _10_Meter_Walk
 
             //creation of event handlers
             createButtonEvents();
+
+            //home screen of program
+            form.Load += new EventHandler(onFormLoad);
+        }
+
+        private void onFormLoad(object sender, EventArgs e)
+        {
+            form.NewTestButton.PerformClick();
         }
 
         private void createButtonEvents()
@@ -117,15 +125,26 @@ namespace _10_Meter_Walk
 
         private void onSearchButtonClicked(object sender, EventArgs e)
         {
+            if (searchTestInputsAreValid() == false)
+                return;
+
             string patientFirst = form.ViewTestPanel.PatientFirstTextbox.Text.ToLower();
             string patientLast = form.ViewTestPanel.PatientLastTextbox.Text.ToLower();
             string dateOfBirth = form.ViewTestPanel.DateOfBirthTextbox.Text.ToLower();
 
             tests = SqliteDataAccess.LoadTests(patientFirst, patientLast, dateOfBirth);
-
+            
             clearTestListView();
             displaySearchResults();
-            clearSearchTextboxes();
+
+            if (tests.Count == 0)
+            {
+                MessageBox.Show("No tests were found using the search criteria");
+            }
+            else
+            {
+                clearSearchTextboxes();
+            }
         }
 
         //TODO make a more elegant looking form to display the information
@@ -186,6 +205,7 @@ namespace _10_Meter_Walk
             {
                 ListViewItem item = new ListViewItem(test.PatientFirst + " " + test.PatientLast);
                 item.SubItems.Add(test.TestDate);
+                item.SubItems.Add(test.TestTime);
                 item.SubItems.Add(test.Notes);
                 form.ViewTestPanel.TestsListView.Items.Add(item);
             }
@@ -304,6 +324,34 @@ namespace _10_Meter_Walk
             if (ValidationManager.inputIsValid(inputText, ValidationManager.ValidationTypes.Notes) == false)
             {
                 notesTextbox.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool searchTestInputsAreValid()
+        {
+            string inputText = "";
+
+            inputText = form.ViewTestPanel.PatientFirstTextbox.Text;
+            if(ValidationManager.inputIsValid(inputText, ValidationManager.ValidationTypes.Name) == false)
+            {
+                form.ViewTestPanel.PatientFirstTextbox.Focus();
+                return false;
+            }
+
+            inputText = form.ViewTestPanel.PatientLastTextbox.Text;
+            if (ValidationManager.inputIsValid(inputText, ValidationManager.ValidationTypes.Name) == false)
+            {
+                form.ViewTestPanel.PatientLastTextbox.Focus();
+                return false;
+            }
+
+            inputText = form.ViewTestPanel.DateOfBirthTextbox.Text;
+            if (ValidationManager.inputIsValid(inputText, ValidationManager.ValidationTypes.Date) == false)
+            {
+                form.ViewTestPanel.DateOfBirthTextbox.Focus();
                 return false;
             }
 
