@@ -52,13 +52,13 @@ namespace _10_Meter_Walk
         //shows and reposition the newTestPanel and highlightPanel, hides other panels not related to the button clicked
         private void onNewTestButtonClicked(object sender, EventArgs e)
         {
-            int testPanelX = form.MenuPanel.Width;
-            int testPanelY = form.HeaderPanel.Height;
+            int visiblePanelX = form.MenuPanel.Width;
+            int visiblePanelY = form.HeaderPanel.Height;
 
             form.NewTestPanel.Visible = true;
             form.ViewTestPanel.Visible = false;
             form.HelpPanel.Visible = false;
-            form.NewTestPanel.Location = new Point(testPanelX, testPanelY);
+            form.NewTestPanel.Location = new Point(visiblePanelX, visiblePanelY);
 
             StyleManager.setButtonAsSelected(form.NewTestButton, form.HighlightPanel);
             StyleManager.setButtonAsNormal(form.ViewTestButton);
@@ -107,7 +107,7 @@ namespace _10_Meter_Walk
             Application.Exit();
         }
 
-        //sets the date and time textbox text to the current date and time
+        //sets the date textbox text to the current date
         private void onTodayButtonClicked(object sender, EventArgs e)
         {
             form.NewTestPanel.TestDateTextbox.Text = DateTime.Now.ToString("MM/dd/yyyy");
@@ -132,11 +132,13 @@ namespace _10_Meter_Walk
             string patientLast = form.ViewTestPanel.PatientLastTextbox.Text.ToLower();
             string dateOfBirth = form.ViewTestPanel.DateOfBirthTextbox.Text.ToLower();
 
+            //populating the tests list with query results
             tests = SqliteDataAccess.LoadTests(patientFirst, patientLast, dateOfBirth);
             
             clearTestListView();
             displaySearchResults();
 
+            //allow the user to edit a mistake if no results are found
             if (tests.Count == 0)
             {
                 MessageBox.Show("No tests were found using the search criteria");
@@ -147,7 +149,6 @@ namespace _10_Meter_Walk
             }
         }
 
-        //TODO make a more elegant looking form to display the information
         private void onViewFullTestButtonClicked(object sender, EventArgs e)
         {
             if (testIsSelected() == false)
@@ -155,7 +156,7 @@ namespace _10_Meter_Walk
 
             TestModel selectedTest = tests[selectedTestIndex];
 
-            //replace this with a more beautiful looking window if I have time
+            //I would replace this with a more beautiful looking window if I have time
             string message = "Patient name:\t" + selectedTest.PatientFirst + " " + selectedTest.PatientLast +
                 "\nPatient DoB:\t" + selectedTest.PatientDOB +
                 "\nTest Date:\t" + selectedTest.TestDate +
@@ -330,6 +331,7 @@ namespace _10_Meter_Walk
             return true;
         }
 
+        //validates if the search inputs are valid on the ViewTestPanel
         private bool searchTestInputsAreValid()
         {
             string inputText = "";
