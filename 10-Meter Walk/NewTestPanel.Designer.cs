@@ -62,7 +62,7 @@
             this.todayButton.Location = new System.Drawing.Point(201, 90);
             this.todayButton.Name = "todayButton";
             this.todayButton.Size = new System.Drawing.Size(148, 39);
-            this.todayButton.TabIndex = 7;
+            this.todayButton.TabIndex = 0;
             this.todayButton.Text = "Today";
             this.todayButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.todayButton.UseVisualStyleBackColor = false;
@@ -103,7 +103,7 @@
             this.notesTextbox.Name = "notesTextbox";
             this.notesTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.notesTextbox.Size = new System.Drawing.Size(336, 118);
-            this.notesTextbox.TabIndex = 13;
+            this.notesTextbox.TabIndex = 5;
             // 
             // adminLastTextbox
             // 
@@ -112,7 +112,7 @@
             this.adminLastTextbox.Location = new System.Drawing.Point(84, 265);
             this.adminLastTextbox.Name = "adminLastTextbox";
             this.adminLastTextbox.Size = new System.Drawing.Size(186, 39);
-            this.adminLastTextbox.TabIndex = 12;
+            this.adminLastTextbox.TabIndex = 4;
             this.adminLastTextbox.TogglesBorder = true;
             this.adminLastTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.adminLastTextbox.WatermarkText = "Test Admin Last";
@@ -124,7 +124,7 @@
             this.adminFirstTextbox.Location = new System.Drawing.Point(84, 220);
             this.adminFirstTextbox.Name = "adminFirstTextbox";
             this.adminFirstTextbox.Size = new System.Drawing.Size(186, 39);
-            this.adminFirstTextbox.TabIndex = 11;
+            this.adminFirstTextbox.TabIndex = 3;
             this.adminFirstTextbox.TogglesBorder = true;
             this.adminFirstTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.adminFirstTextbox.WatermarkText = "Test Admin First";
@@ -136,7 +136,7 @@
             this.testTimeTextbox.Location = new System.Drawing.Point(9, 135);
             this.testTimeTextbox.Name = "testTimeTextbox";
             this.testTimeTextbox.Size = new System.Drawing.Size(186, 39);
-            this.testTimeTextbox.TabIndex = 10;
+            this.testTimeTextbox.TabIndex = 2;
             this.testTimeTextbox.TogglesBorder = true;
             this.testTimeTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.testTimeTextbox.WatermarkText = "Time (mm:ss)";
@@ -148,7 +148,7 @@
             this.testDateTextbox.Location = new System.Drawing.Point(9, 90);
             this.testDateTextbox.Name = "testDateTextbox";
             this.testDateTextbox.Size = new System.Drawing.Size(186, 39);
-            this.testDateTextbox.TabIndex = 9;
+            this.testDateTextbox.TabIndex = 1;
             this.testDateTextbox.TogglesBorder = true;
             this.testDateTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.testDateTextbox.WatermarkText = "Date (mm/dd/yyyy)";
@@ -183,7 +183,7 @@
             this.patientDOBTextbox.Location = new System.Drawing.Point(48, 165);
             this.patientDOBTextbox.Name = "patientDOBTextbox";
             this.patientDOBTextbox.Size = new System.Drawing.Size(186, 39);
-            this.patientDOBTextbox.TabIndex = 3;
+            this.patientDOBTextbox.TabIndex = 2;
             this.patientDOBTextbox.TogglesBorder = true;
             this.patientDOBTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.patientDOBTextbox.WatermarkText = "DoB (mm/dd/yyyy)";
@@ -195,7 +195,7 @@
             this.patientLastTextbox.Location = new System.Drawing.Point(48, 120);
             this.patientLastTextbox.Name = "patientLastTextbox";
             this.patientLastTextbox.Size = new System.Drawing.Size(186, 39);
-            this.patientLastTextbox.TabIndex = 2;
+            this.patientLastTextbox.TabIndex = 1;
             this.patientLastTextbox.TogglesBorder = true;
             this.patientLastTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.patientLastTextbox.WatermarkText = "Last Name";
@@ -207,7 +207,7 @@
             this.patientFirstTextbox.Location = new System.Drawing.Point(48, 75);
             this.patientFirstTextbox.Name = "patientFirstTextbox";
             this.patientFirstTextbox.Size = new System.Drawing.Size(186, 39);
-            this.patientFirstTextbox.TabIndex = 1;
+            this.patientFirstTextbox.TabIndex = 0;
             this.patientFirstTextbox.TogglesBorder = true;
             this.patientFirstTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.patientFirstTextbox.WatermarkText = "First Name";
@@ -249,7 +249,7 @@
             this.saveButton.Location = new System.Drawing.Point(463, 360);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(82, 82);
-            this.saveButton.TabIndex = 2;
+            this.saveButton.TabIndex = 0;
             this.saveButton.UseVisualStyleBackColor = false;
             // 
             // NewTestPanel

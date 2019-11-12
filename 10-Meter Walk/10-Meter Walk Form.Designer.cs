@@ -81,7 +81,7 @@
             this.exitButton.Location = new System.Drawing.Point(0, 451);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(150, 110);
-            this.exitButton.TabIndex = 5;
+            this.exitButton.TabIndex = 1;
             this.exitButton.Text = "Exit";
             this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.exitButton.UseVisualStyleBackColor = false;
@@ -141,7 +141,7 @@
             this.newTestButton.Location = new System.Drawing.Point(0, 75);
             this.newTestButton.Name = "newTestButton";
             this.newTestButton.Size = new System.Drawing.Size(150, 110);
-            this.newTestButton.TabIndex = 0;
+            this.newTestButton.TabIndex = 2;
             this.newTestButton.Text = "New Test";
             this.newTestButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.newTestButton.UseVisualStyleBackColor = false;
@@ -180,6 +180,7 @@
             // 
             // viewTestPanel
             // 
+            this.viewTestPanel.BackColor = System.Drawing.Color.White;
             this.viewTestPanel.Location = new System.Drawing.Point(188, 490);
             this.viewTestPanel.Name = "viewTestPanel";
             this.viewTestPanel.Size = new System.Drawing.Size(634, 486);

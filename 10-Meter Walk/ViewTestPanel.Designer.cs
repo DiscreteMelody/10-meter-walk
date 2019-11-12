@@ -75,7 +75,7 @@
             this.searchButton.Location = new System.Drawing.Point(93, 213);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(131, 54);
-            this.searchButton.TabIndex = 8;
+            this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Search";
             this.searchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.searchButton.UseVisualStyleBackColor = false;
@@ -87,7 +87,7 @@
             this.dateOfBirthTextbox.Location = new System.Drawing.Point(65, 149);
             this.dateOfBirthTextbox.Name = "dateOfBirthTextbox";
             this.dateOfBirthTextbox.Size = new System.Drawing.Size(186, 39);
-            this.dateOfBirthTextbox.TabIndex = 3;
+            this.dateOfBirthTextbox.TabIndex = 2;
             this.dateOfBirthTextbox.TogglesBorder = true;
             this.dateOfBirthTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.dateOfBirthTextbox.WatermarkText = "DoB (mm/dd/yyyy)";
@@ -99,7 +99,7 @@
             this.patientLastTextbox.Location = new System.Drawing.Point(65, 104);
             this.patientLastTextbox.Name = "patientLastTextbox";
             this.patientLastTextbox.Size = new System.Drawing.Size(186, 39);
-            this.patientLastTextbox.TabIndex = 2;
+            this.patientLastTextbox.TabIndex = 1;
             this.patientLastTextbox.TogglesBorder = true;
             this.patientLastTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.patientLastTextbox.WatermarkText = "Patient Last Name";
@@ -111,7 +111,7 @@
             this.patientFirstTextbox.Location = new System.Drawing.Point(65, 59);
             this.patientFirstTextbox.Name = "patientFirstTextbox";
             this.patientFirstTextbox.Size = new System.Drawing.Size(186, 39);
-            this.patientFirstTextbox.TabIndex = 1;
+            this.patientFirstTextbox.TabIndex = 0;
             this.patientFirstTextbox.TogglesBorder = true;
             this.patientFirstTextbox.WatermarkColor = System.Drawing.Color.Gray;
             this.patientFirstTextbox.WatermarkText = "Patient First Name";
@@ -211,7 +211,7 @@
             this.viewFullTestButton.Location = new System.Drawing.Point(364, 90);
             this.viewFullTestButton.Name = "viewFullTestButton";
             this.viewFullTestButton.Size = new System.Drawing.Size(82, 82);
-            this.viewFullTestButton.TabIndex = 12;
+            this.viewFullTestButton.TabIndex = 0;
             this.viewFullTestButton.UseVisualStyleBackColor = false;
             // 
             // deleteTestButton
@@ -229,7 +229,7 @@
             this.deleteTestButton.Location = new System.Drawing.Point(513, 90);
             this.deleteTestButton.Name = "deleteTestButton";
             this.deleteTestButton.Size = new System.Drawing.Size(82, 82);
-            this.deleteTestButton.TabIndex = 10;
+            this.deleteTestButton.TabIndex = 1;
             this.deleteTestButton.UseVisualStyleBackColor = false;
             // 
             // ViewTestPanel
