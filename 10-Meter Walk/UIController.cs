@@ -19,7 +19,7 @@ namespace _10_Meter_Walk
         public UIController(PrimaryForm form_to_manipulate)
         {
             this.form = form_to_manipulate;
-            menuButtons = new List<Button>() { form.NewTestButton, form.ViewTestButton, form.HelpButton };
+            menuButtons = new List<Button>() { form.NewTestButton, form.ViewTestButton, form.HelpButton, form.ExitButton };
 
             //creation of event handlers
             createButtonEvents();
@@ -46,14 +46,15 @@ namespace _10_Meter_Walk
         {
             int testPanelX = form.MenuPanel.Width;
             int testPanelY = form.HeaderPanel.Height;
-            int highlightPanelX = form.HighlightPanel.Location.X;
-            int highlightPanelY = form.NewTestButton.Location.Y;
 
             form.NewTestPanel.Visible = true;
             form.ViewTestPanel.Visible = false;
             form.HelpPanel.Visible = false;
             form.NewTestPanel.Location = new Point(testPanelX, testPanelY);
-            form.HighlightPanel.Location = new Point(highlightPanelX, highlightPanelY);
+
+            StyleManager.setButtonAsSelected(form.NewTestButton, form.HighlightPanel);
+            StyleManager.setButtonAsNormal(form.ViewTestButton);
+            StyleManager.setButtonAsNormal(form.HelpButton);
         }
 
         //shows and reposition the viewTestPanel and highlightPanel, hides other panels not related to the button clicked
@@ -69,6 +70,10 @@ namespace _10_Meter_Walk
             form.HelpPanel.Visible = false;
             form.ViewTestPanel.Location = new Point(testPanelX, testPanelY);
             form.HighlightPanel.Location = new Point(highlightPanelX, highlightPanelY);
+            
+            StyleManager.setButtonAsNormal(form.NewTestButton);
+            StyleManager.setButtonAsSelected(form.ViewTestButton, form.HighlightPanel);
+            StyleManager.setButtonAsNormal(form.HelpButton);
         }
 
         //shows and reposition the helpPanel and highlightPanel, hides other panels not related to the button clicked
@@ -84,6 +89,9 @@ namespace _10_Meter_Walk
             form.HelpPanel.Visible = true;
             form.HelpPanel.Location = new Point(helpPanelX, helpPanelY);
             form.HighlightPanel.Location = new Point(highlightPanelX, highlightPanelY);
+            StyleManager.setButtonAsSelected(form.HelpButton, form.HighlightPanel);
+            StyleManager.setButtonAsNormal(form.NewTestButton);
+            StyleManager.setButtonAsNormal(form.ViewTestButton);
         }
 
         private void onExitButtonClicked(object sender, EventArgs e)
