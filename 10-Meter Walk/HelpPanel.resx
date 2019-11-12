@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="aboutText.Text" xml:space="preserve">
+    <value>This project is written by Levi Sprague. It is a solution to a user
+story about a prosthetist who conducts 10-meter walk tests.
+
+These fabulous icons and more are from https://icons8.com/
+
+For any questions, please contact me at:
+levi.p.sprague@gmail.com</value>
+  </data>
+  <data name="recordingHelpText.Text" xml:space="preserve">
+    <value>-Click "New Test" on the left.
+-Add in patient and test information.
+-Click "Save" on the bottom right.
+
+The text entered will be cleared and the
+test will be saved to the database for
+future viewing.</value>
+  </data>
+  <data name="viewingHelpText.Text" xml:space="preserve">
+    <value>-Enter information of patient you want
+  to search for.
+-Results will be displayed on the bottom.
+-Click a result, then click "View" on the
+  top right to view the full test.
+
+You can delete a test by clicking a result
+then choosing the "Delete" button on the
+top right.
+Deleted tests cannot be retrieved!</value>
+  </data>
 </root>

@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpPanel));
             this.aboutPanel = new System.Windows.Forms.Panel();
             this.aboutText = new System.Windows.Forms.Label();
             this.aboutLabel = new System.Windows.Forms.Label();
             this.recordingHelpPanel = new System.Windows.Forms.Panel();
-            this.viewingHelpPanel = new System.Windows.Forms.Panel();
-            this.recordingHelpLabel = new System.Windows.Forms.Label();
-            this.viewingHelpLabel = new System.Windows.Forms.Label();
             this.recordingHelpText = new System.Windows.Forms.Label();
+            this.recordingHelpLabel = new System.Windows.Forms.Label();
+            this.viewingHelpPanel = new System.Windows.Forms.Panel();
             this.viewingHelpText = new System.Windows.Forms.Label();
+            this.viewingHelpLabel = new System.Windows.Forms.Label();
             this.aboutPanel.SuspendLayout();
             this.recordingHelpPanel.SuspendLayout();
             this.viewingHelpPanel.SuspendLayout();
@@ -59,11 +60,9 @@
             this.aboutText.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutText.Location = new System.Drawing.Point(47, 55);
             this.aboutText.Name = "aboutText";
-            this.aboutText.Size = new System.Drawing.Size(473, 120);
+            this.aboutText.Size = new System.Drawing.Size(474, 140);
             this.aboutText.TabIndex = 14;
-            this.aboutText.Text = "This project is a coding challenge as part of a screening process.\r\n\r\nThese fabul" +
-    "ous icons and more are from https://icons8.com/\r\n\r\nFor any questions, please con" +
-    "tact me at:\r\nlevi.p.sprague@gmail.com";
+            this.aboutText.Text = resources.GetString("aboutText.Text");
             // 
             // aboutLabel
             // 
@@ -86,15 +85,16 @@
             this.recordingHelpPanel.Size = new System.Drawing.Size(311, 269);
             this.recordingHelpPanel.TabIndex = 5;
             // 
-            // viewingHelpPanel
+            // recordingHelpText
             // 
-            this.viewingHelpPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.viewingHelpPanel.Controls.Add(this.viewingHelpText);
-            this.viewingHelpPanel.Controls.Add(this.viewingHelpLabel);
-            this.viewingHelpPanel.Location = new System.Drawing.Point(320, 3);
-            this.viewingHelpPanel.Name = "viewingHelpPanel";
-            this.viewingHelpPanel.Size = new System.Drawing.Size(311, 269);
-            this.viewingHelpPanel.TabIndex = 6;
+            this.recordingHelpText.AutoSize = true;
+            this.recordingHelpText.BackColor = System.Drawing.Color.Transparent;
+            this.recordingHelpText.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordingHelpText.Location = new System.Drawing.Point(5, 54);
+            this.recordingHelpText.Name = "recordingHelpText";
+            this.recordingHelpText.Size = new System.Drawing.Size(299, 140);
+            this.recordingHelpText.TabIndex = 15;
+            this.recordingHelpText.Text = resources.GetString("recordingHelpText.Text");
             // 
             // recordingHelpLabel
             // 
@@ -107,6 +107,27 @@
             this.recordingHelpLabel.TabIndex = 9;
             this.recordingHelpLabel.Text = "Recording Tests";
             // 
+            // viewingHelpPanel
+            // 
+            this.viewingHelpPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.viewingHelpPanel.Controls.Add(this.viewingHelpText);
+            this.viewingHelpPanel.Controls.Add(this.viewingHelpLabel);
+            this.viewingHelpPanel.Location = new System.Drawing.Point(320, 3);
+            this.viewingHelpPanel.Name = "viewingHelpPanel";
+            this.viewingHelpPanel.Size = new System.Drawing.Size(311, 269);
+            this.viewingHelpPanel.TabIndex = 6;
+            // 
+            // viewingHelpText
+            // 
+            this.viewingHelpText.AutoSize = true;
+            this.viewingHelpText.BackColor = System.Drawing.Color.Transparent;
+            this.viewingHelpText.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewingHelpText.Location = new System.Drawing.Point(3, 54);
+            this.viewingHelpText.Name = "viewingHelpText";
+            this.viewingHelpText.Size = new System.Drawing.Size(305, 200);
+            this.viewingHelpText.TabIndex = 16;
+            this.viewingHelpText.Text = resources.GetString("viewingHelpText.Text");
+            // 
             // viewingHelpLabel
             // 
             this.viewingHelpLabel.AutoSize = true;
@@ -117,28 +138,6 @@
             this.viewingHelpLabel.Size = new System.Drawing.Size(302, 32);
             this.viewingHelpLabel.TabIndex = 10;
             this.viewingHelpLabel.Text = "Viewing Previous Tests";
-            // 
-            // recordingHelpText
-            // 
-            this.recordingHelpText.AutoSize = true;
-            this.recordingHelpText.BackColor = System.Drawing.Color.Transparent;
-            this.recordingHelpText.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordingHelpText.Location = new System.Drawing.Point(5, 69);
-            this.recordingHelpText.Name = "recordingHelpText";
-            this.recordingHelpText.Size = new System.Drawing.Size(165, 20);
-            this.recordingHelpText.TabIndex = 15;
-            this.recordingHelpText.Text = "Help text will go here";
-            // 
-            // viewingHelpText
-            // 
-            this.viewingHelpText.AutoSize = true;
-            this.viewingHelpText.BackColor = System.Drawing.Color.Transparent;
-            this.viewingHelpText.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewingHelpText.Location = new System.Drawing.Point(3, 69);
-            this.viewingHelpText.Name = "viewingHelpText";
-            this.viewingHelpText.Size = new System.Drawing.Size(165, 20);
-            this.viewingHelpText.TabIndex = 16;
-            this.viewingHelpText.Text = "Help text will go here";
             // 
             // HelpPanel
             // 
