@@ -59,11 +59,11 @@
             this.todayButton.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todayButton.ForeColor = System.Drawing.Color.White;
             this.todayButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.todayButton.Location = new System.Drawing.Point(214, 75);
+            this.todayButton.Location = new System.Drawing.Point(201, 90);
             this.todayButton.Name = "todayButton";
-            this.todayButton.Size = new System.Drawing.Size(131, 84);
+            this.todayButton.Size = new System.Drawing.Size(148, 39);
             this.todayButton.TabIndex = 7;
-            this.todayButton.Text = "Performed\r\nToday";
+            this.todayButton.Text = "Today";
             this.todayButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.todayButton.UseVisualStyleBackColor = false;
             // 
@@ -109,7 +109,7 @@
             // 
             this.adminLastTextbox.BackColor = System.Drawing.Color.Transparent;
             this.adminLastTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.adminLastTextbox.Location = new System.Drawing.Point(84, 248);
+            this.adminLastTextbox.Location = new System.Drawing.Point(84, 265);
             this.adminLastTextbox.Name = "adminLastTextbox";
             this.adminLastTextbox.Size = new System.Drawing.Size(186, 39);
             this.adminLastTextbox.TabIndex = 12;
@@ -121,7 +121,7 @@
             // 
             this.adminFirstTextbox.BackColor = System.Drawing.Color.Transparent;
             this.adminFirstTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.adminFirstTextbox.Location = new System.Drawing.Point(84, 203);
+            this.adminFirstTextbox.Location = new System.Drawing.Point(84, 220);
             this.adminFirstTextbox.Name = "adminFirstTextbox";
             this.adminFirstTextbox.Size = new System.Drawing.Size(186, 39);
             this.adminFirstTextbox.TabIndex = 11;
@@ -133,19 +133,19 @@
             // 
             this.testTimeTextbox.BackColor = System.Drawing.Color.Transparent;
             this.testTimeTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.testTimeTextbox.Location = new System.Drawing.Point(9, 120);
+            this.testTimeTextbox.Location = new System.Drawing.Point(9, 135);
             this.testTimeTextbox.Name = "testTimeTextbox";
             this.testTimeTextbox.Size = new System.Drawing.Size(186, 39);
             this.testTimeTextbox.TabIndex = 10;
             this.testTimeTextbox.TogglesBorder = true;
             this.testTimeTextbox.WatermarkColor = System.Drawing.Color.Gray;
-            this.testTimeTextbox.WatermarkText = "Time (hh:mm am/pm)";
+            this.testTimeTextbox.WatermarkText = "Time (mm:ss)";
             // 
             // testDateTextbox
             // 
             this.testDateTextbox.BackColor = System.Drawing.Color.Transparent;
             this.testDateTextbox.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.testDateTextbox.Location = new System.Drawing.Point(9, 75);
+            this.testDateTextbox.Location = new System.Drawing.Point(9, 90);
             this.testDateTextbox.Name = "testDateTextbox";
             this.testDateTextbox.Size = new System.Drawing.Size(186, 39);
             this.testDateTextbox.TabIndex = 9;

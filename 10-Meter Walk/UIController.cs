@@ -102,7 +102,6 @@ namespace _10_Meter_Walk
         //sets the date and time textbox text to the current date and time
         private void onTodayButtonClicked(object sender, EventArgs e)
         {
-            form.NewTestPanel.TestTimeTextbox.Text = DateTime.Now.ToString("hh:mm tt");
             form.NewTestPanel.TestDateTextbox.Text = DateTime.Now.ToString("MM/dd/yyyy");
         }
 
